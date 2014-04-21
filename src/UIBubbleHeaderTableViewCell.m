@@ -8,12 +8,6 @@
 
 #import "UIBubbleHeaderTableViewCell.h"
 
-@interface UIBubbleHeaderTableViewCell ()
-
-@property (nonatomic, retain) UILabel *label;
-
-@end
-
 @implementation UIBubbleHeaderTableViewCell
 
 @synthesize label = _label;

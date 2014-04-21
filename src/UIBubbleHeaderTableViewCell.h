@@ -13,5 +13,6 @@
 + (CGFloat)height;
 
 @property (nonatomic, strong) NSDate *date;
+@property (nonatomic, retain) UILabel *label;
 
 @end
