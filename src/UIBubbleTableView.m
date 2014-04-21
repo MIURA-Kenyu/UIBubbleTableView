@@ -13,12 +13,6 @@
 #import "UIBubbleHeaderTableViewCell.h"
 #import "UIBubbleTypingTableViewCell.h"
 
-@interface UIBubbleTableView ()
-
-@property (nonatomic, retain) NSMutableArray *bubbleSection;
-
-@end
-
 @implementation UIBubbleTableView
 
 @synthesize bubbleDataSource = _bubbleDataSource;
