@@ -18,8 +18,6 @@
 @property (nonatomic, retain) UIImageView *bubbleImage;
 @property (nonatomic, retain) UIImageView *avatarImage;
 
-- (void) setupInternalData;
-
 @end
 
 @implementation UIBubbleTableViewCell
