@@ -12,14 +12,6 @@
 #import "UIBubbleTableViewCell.h"
 #import "NSBubbleData.h"
 
-@interface UIBubbleTableViewCell ()
-
-@property (nonatomic, retain) UIView *customView;
-@property (nonatomic, retain) UIImageView *bubbleImage;
-@property (nonatomic, retain) UIImageView *avatarImage;
-
-@end
-
 @implementation UIBubbleTableViewCell
 
 @synthesize data = _data;

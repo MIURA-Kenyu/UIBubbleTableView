@@ -15,6 +15,9 @@
 
 @property (nonatomic, strong) NSBubbleData *data;
 @property (nonatomic) BOOL showAvatar;
+@property (nonatomic, retain) UIView *customView;
+@property (nonatomic, retain) UIImageView *bubbleImage;
+@property (nonatomic, retain) UIImageView *avatarImage;
 
 - (void) setupInternalData;
 
