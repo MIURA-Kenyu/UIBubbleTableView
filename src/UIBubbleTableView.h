@@ -28,6 +28,7 @@ typedef enum _NSBubbleTypingType
 @property (nonatomic) BOOL showAvatars;
 @property (nonatomic, retain) NSMutableArray *bubbleSection;
 
-- (void) scrollBubbleViewToBottomAnimated:(BOOL)animated;
+- (void)initializator;
+- (void)scrollBubbleViewToBottomAnimated:(BOOL)animated;
 
 @end
