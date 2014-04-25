@@ -125,7 +125,7 @@
     [super reloadData];
 }
 
-- (void) populateData:(NSArray *bubbleData) {
+- (void) populateData:(NSArray *)bubbleData {
     NSDate *last = [NSDate dateWithTimeIntervalSince1970:0];
     NSMutableArray *currentSection = nil;
     
