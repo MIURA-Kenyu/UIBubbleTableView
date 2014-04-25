@@ -119,16 +119,17 @@
              return [bubbleData1.date compare:bubbleData2.date];            
          }];
         
-        [self populateData];
+        [self populateData:bubbleData];
     }
     
     [super reloadData];
 }
 
-- (void) populateData {
+- (void) populateData:(NSArray *bubbleData) {
     NSDate *last = [NSDate dateWithTimeIntervalSince1970:0];
     NSMutableArray *currentSection = nil;
     
+    int count = bubbleData.count;
     for (int i = 0; i < count; i++)
     {
         NSBubbleData *data = (NSBubbleData *)[bubbleData objectAtIndex:i];

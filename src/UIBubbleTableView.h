@@ -30,6 +30,6 @@ typedef enum _NSBubbleTypingType
 
 - (void)initializator;
 - (void)scrollBubbleViewToBottomAnimated:(BOOL)animated;
-- (void)populateData;
+- (void)populateData:(NSArray *)bubbleData;
 
 @end
