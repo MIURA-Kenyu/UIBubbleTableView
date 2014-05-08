@@ -111,14 +111,6 @@
             [bubbleData addObject:object];
         }
         
-        [bubbleData sortUsingComparator:^NSComparisonResult(id obj1, id obj2)
-         {
-             NSBubbleData *bubbleData1 = (NSBubbleData *)obj1;
-             NSBubbleData *bubbleData2 = (NSBubbleData *)obj2;
-             
-             return [bubbleData1.date compare:bubbleData2.date];            
-         }];
-        
         [self populateData:bubbleData];
     }
     
@@ -126,6 +118,14 @@
 }
 
 - (void) populateData:(NSArray *)bubbleData {
+    [bubbleData sortUsingComparator:^NSComparisonResult(id obj1, id obj2)
+     {
+         NSBubbleData *bubbleData1 = (NSBubbleData *)obj1;
+         NSBubbleData *bubbleData2 = (NSBubbleData *)obj2;
+         
+         return [bubbleData1.date compare:bubbleData2.date];            
+     }];
+    
     NSDate *last = [NSDate dateWithTimeIntervalSince1970:0];
     NSMutableArray *currentSection = nil;
     
