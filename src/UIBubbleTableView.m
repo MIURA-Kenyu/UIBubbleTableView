@@ -98,26 +98,26 @@
     
     if (self.bubbleDataSource && (count = [self.bubbleDataSource rowsForBubbleTable:self]) > 0)
     {
-#if !__has_feature(objc_arc)
-        NSMutableArray *bubbleData = [[[NSMutableArray alloc] initWithCapacity:count] autorelease];
-#else
-        NSMutableArray *bubbleData = [[NSMutableArray alloc] initWithCapacity:count];
-#endif
-        
-        for (int i = 0; i < count; i++)
-        {
-            NSObject *object = [self.bubbleDataSource bubbleTableView:self dataForRow:i];
-            assert([object isKindOfClass:[NSBubbleData class]]);
-            [bubbleData addObject:object];
-        }
-        
-        [self populateData:bubbleData];
+        [self populateData: count];
     }
     
     [super reloadData];
 }
 
-- (void) populateData:(NSArray *)bubbleData {
+- (void) populateData: (int)count {
+#if !__has_feature(objc_arc)
+    NSMutableArray *bubbleData = [[[NSMutableArray alloc] initWithCapacity:count] autorelease];
+#else
+    NSMutableArray *bubbleData = [[NSMutableArray alloc] initWithCapacity:count];
+#endif
+
+    for (int i = 0; i < count; i++)
+    {
+        NSObject *object = [self.bubbleDataSource bubbleTableView:self dataForRow:i];
+        assert([object isKindOfClass:[NSBubbleData class]]);
+        [bubbleData addObject:object];
+    }
+
     [bubbleData sortUsingComparator:^NSComparisonResult(id obj1, id obj2)
      {
          NSBubbleData *bubbleData1 = (NSBubbleData *)obj1;
@@ -129,7 +129,6 @@
     NSDate *last = [NSDate dateWithTimeIntervalSince1970:0];
     NSMutableArray *currentSection = nil;
     
-    int count = bubbleData.count;
     for (int i = 0; i < count; i++)
     {
         NSBubbleData *data = (NSBubbleData *)[bubbleData objectAtIndex:i];
